@@ -1,3 +1,11 @@
+import legacy from "@vitejs/plugin-legacy";
+
 export default {
-  build: { target: ["es2020", "edge88", "firefox78", "chrome87", "safari14"] },
+  plugins: [
+    legacy({
+      modernTargets: ["edge>=88", "firefox>=78", "chrome>=87", "safari>=14"],
+      modernPolyfills: true,
+      renderLegacyChunks: false,
+    }),
+  ],
 };
